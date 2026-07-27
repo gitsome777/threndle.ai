@@ -12,17 +12,14 @@ import Gnome from "../components/Gnome";
  * Zoho silently discards a value posted under an unknown field name.
  */
 const BIGIN = {
-  // Set explicitly. Bigin's own script assigns this attribute when it loads, but it
-  // does that against a form that already exists in the document — in React the form
-  // mounts later and the action is never set, so the POST silently goes back to the
-  // page instead of to Zoho. Verified endpoint, taken from a working submission.
+  // Verified endpoint, taken from a working submission.
   action: "https://bigin.zohocloud.ca/crm/WebForm",
-  formId: "BiginWebToRecordForm50945000000237968",
-  frameId: "hidden50945000000237968Frame",
-  xnQsjsdp: "dd8acdcf6c4a96db132fbe00c43358df47e479db47c99c59f33555413a39f7c6",
-  xmIwtLD: "5a56144ff45f7312290a6fa30cc4dfe687d94e0ae318368c00cf8d05198ea2b1235cc05a71e384657a0910fd2a1bf3d1",
+  formId: "BiginWebToRecordForm50945000000240613",
+  frameId: "hidden50945000000240613Frame",
+  xnQsjsdp: "673874001928b2cedf425fbbc58c0b2dfb4796ef717d5b250a7b7c0ff2547d5b",
+  xmIwtLD: "4a58a6441cea1a8215c2a4aac2618aba5ef5abf11e20c0c2c39100f1f313e627db555c0e5ba949f7be7db9e3f385bfdd",
   script:
-    "https://bigin.zohocloud.ca/crm/WebformScriptServlet?rid=5a56144ff45f7312290a6fa30cc4dfe687d94e0ae318368c00cf8d05198ea2b1235cc05a71e384657a0910fd2a1bf3d1giddd8acdcf6c4a96db132fbe00c43358df47e479db47c99c59f33555413a39f7c6",
+    "https://bigin.zohocloud.ca/crm/WebformScriptServlet?rid=4a58a6441cea1a8215c2a4aac2618aba5ef5abf11e20c0c2c39100f1f313e627db555c0e5ba949f7be7db9e3f385bfddgid673874001928b2cedf425fbbc58c0b2dfb4796ef717d5b250a7b7c0ff2547d5b",
 };
 
 /** Each group maps to one Bigin multi-select field. Values must match Bigin exactly. */
@@ -196,8 +193,29 @@ export default function Diagnostic() {
       set("POTENTIALCF8", BUDGET[formData.budget] ?? "");
       set("POTENTIALCF51", String(score));
       set("POTENTIALCF9", (tier.match(/Tier \d/) ?? ["Tier 1"])[0]);
-      set("POTENTIALCF10", "Not asked at intake");
-      set("POTENTIALCF11", "Not asked at intake");
+
+      // New fields from the updated Bigin webform:
+      // "What are you looking for?" — the diagnostic is an information request by default.
+      set("POTENTIALCF23", "Information");
+      set("Lead Source", "Web Search");
+      set("Type", "New Business");
+      set("Probability", "10");
+      set("Next Step", "Send diagnostic follow-up email");
+      set("Amount", "");
+
+      // Internal context fields.
+      set("POTENTIALCF10", formData.usesTools === "no"
+        ? "Mostly spreadsheets and memory — no current apps."
+        : `Uses apps: ${connectorCount > 0 ? "see connector fields" : "no specific tools selected"}. Other tools: ${formData.otherTools.trim() || "none given"}.`
+      );
+      set("POTENTIALCF11", why);
+      set("Description", [
+        `Bottlenecks: ${formData.bottlenecks.map(b => BOTTLENECK[b]).join("; ")}`,
+        `Time lost: ${HOURS[formData.hours] ?? ""}`,
+        `Timeline: ${TIMELINE[formData.urgency] ?? ""}`,
+        `Budget: ${BUDGET[formData.budget] ?? ""}`,
+        `Recommended tier: ${tier}`,
+      ].join(" | "));
       set("POTENTIALCF12", formData.email.trim());
 
       CONNECTORS.forEach(({ cf }) => set(cf, (formData.connectors[cf] ?? []).join(";")));
@@ -339,10 +357,6 @@ export default function Diagnostic() {
                 onChange={e => setFormData({...formData, website: e.target.value})}
               />
             </div>
-            {/* NOTE: when double opt-in is enabled on the Bigin webform, restore the
-                line: "We'll email you a confirmation link - nothing is added to our
-                system until you click it." Until Bigin actually sends that email,
-                claiming it would be false: the record reaches the pipeline on submit. */}
             <p className="text-ink-soft text-xs mt-4">
               We'll only use these to get back to you about your diagnostic.
             </p>
@@ -677,14 +691,15 @@ export default function Diagnostic() {
             "Potential Name", "Accounts.Account Name", "Accounts.Website", "Closing Date",
             "POTENTIALCF1", "POTENTIALCF2", "POTENTIALCF3", "POTENTIALCF4", "POTENTIALCF5",
             "POTENTIALCF6", "POTENTIALCF7", "POTENTIALCF8", "POTENTIALCF51", "POTENTIALCF9",
-            "POTENTIALCF10", "POTENTIALCF11", "POTENTIALCF12",
+            "POTENTIALCF10", "POTENTIALCF11", "POTENTIALCF12", "POTENTIALCF23",
+            "Lead Source", "Type", "Probability", "Next Step", "Amount", "Description",
             ...CONNECTORS.map(c => c.cf),
           ].map(name => (
             <input key={name} type="text" name={name} defaultValue="" />
           ))}
 
-          <input type="text" name="Pipeline" defaultValue="Customer Onboarding Standard" />
-          <input type="text" name="Stage" defaultValue="Introduction" />
+          <input type="text" name="Pipeline" defaultValue="Sales Pipeline Standard" />
+          <input type="text" name="Stage" defaultValue="Qualification" />
         </form>
       </main>
 
