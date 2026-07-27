@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 360" width="100%" height="100%">
+<g transform="translate(475, 140)" text-anchor="middle">
+<!-- Main Wordmark: threndle.ai -->
+<text y="0">
+<!-- 'threndle' in Helvetica (91.96px) -->
+<tspan font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="91.96" font-weight="700" fill="#433A36" letter-spacing="-1.5">threndle</tspan>
+<!-- '.ai' in Helvetica Terracotta (reduced 15% to 63.95px) -->
+<tspan font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="63.95" font-weight="700" fill="#B8562B" letter-spacing="-1">.ai</tspan>
+</text>
+
+<!-- Terracotta Thread Divider Line -->
+<!-- Left Diamond -->
+<path d="M -280 46 L -273 39 L -266 46 L -273 53 Z" fill="#B8562B" />
+
+<!-- Dashed Center Line -->
+<line x1="-255" y1="46" x2="255" y2="46" stroke="#B8562B" stroke-width="2.5" stroke-dasharray="14 9" stroke-linecap="round" />
+
+<!-- Right Diamond -->
+<path d="M 266 46 L 273 39 L 280 46 L 273 53 Z" fill="#B8562B" />
+
+<!-- Subtitle / Tagline -->
+<text y="104" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="20" fill="#5C524B" letter-spacing="0.2">
+every business runs on loose threads, we tie them off.
+</text>
+</g>
+</svg>

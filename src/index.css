@@ -1,0 +1,30 @@
+/* Font import must come first. `@import "tailwindcss"` expands into rules, so any
+   @import after it lands mid-stylesheet and browsers drop it — the build warns
+   "@import rules must precede all rules" and the fonts silently fail to load. */
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-stone: #E2DED2;
+  --color-stone-raised: #EDE9DE;
+  --color-ink: #221F19;
+  --color-ink-soft: #5B564A;
+  --color-rule: #C9C2AE;
+  --color-brass: #A9803B;
+  --color-brass-dim: #8C6B30;
+  --color-teal: #2F5D56;
+  --color-teal-soft: #DCE6E2;
+  
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Newsreader', serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-stone);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
