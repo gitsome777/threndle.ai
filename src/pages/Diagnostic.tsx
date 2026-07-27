@@ -62,6 +62,7 @@ export default function Diagnostic() {
     hours: "",
     urgency: "",
     budget: "",
+    lookingFor: "",
   });
 
   const [result, setResult] = useState<null | { tier: string, price: string, why: string, includes: string[] }>(null);
@@ -108,8 +109,8 @@ export default function Diagnostic() {
       return;
     }
 
-    if (!formData.hours || !formData.urgency || !formData.budget || !formData.usesTools || formData.bottlenecks.length === 0) {
-      alert("Please answer every question, including at least one bottleneck, before submitting.");
+    if (!formData.hours || !formData.urgency || !formData.budget || !formData.usesTools || !formData.lookingFor || formData.bottlenecks.length === 0) {
+      alert("Please answer every question, including what you're looking for and at least one bottleneck, before submitting.");
       return;
     }
 
@@ -195,9 +196,8 @@ export default function Diagnostic() {
       set("POTENTIALCF9", (tier.match(/Tier \d/) ?? ["Tier 1"])[0]);
 
       // New fields from the updated Bigin webform:
-      // "What are you looking for?" — the diagnostic is an information request by default.
-      set("POTENTIALCF23", "Information");
-      set("Lead Source", "Web Search");
+      set("POTENTIALCF23", formData.lookingFor);
+      set("Lead Source", "AI Suggestion");
       set("Type", "New Business");
       set("Probability", "10");
       set("Next Step", "Send diagnostic follow-up email");
@@ -357,6 +357,35 @@ export default function Diagnostic() {
                 onChange={e => setFormData({...formData, website: e.target.value})}
               />
             </div>
+
+            <div className="mt-10">
+              <div className="font-mono text-xs tracking-widest uppercase text-brass-dim mb-3">What are you looking for?</div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                {[
+                  { id: 'Information', label: 'Information' },
+                  { id: 'Team Learning Session', label: 'Team Learning Session' },
+                  { id: 'Integration', label: 'Integration' },
+                ].map(opt => (
+                  <label
+                    key={opt.id}
+                    className={cn(
+                      "flex items-center gap-3 p-4 border-2 rounded-sm cursor-pointer transition-colors text-center justify-center",
+                      formData.lookingFor === opt.id ? "border-teal bg-teal-soft" : "border-rule bg-stone hover:border-teal"
+                    )}
+                  >
+                    <input
+                      type="radio"
+                      name="lookingFor"
+                      className="hidden"
+                      checked={formData.lookingFor === opt.id}
+                      onChange={() => setFormData({ ...formData, lookingFor: opt.id })}
+                    />
+                    <span className="font-medium">{opt.label}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
             <p className="text-ink-soft text-xs mt-4">
               We'll only use these to get back to you about your diagnostic.
             </p>
