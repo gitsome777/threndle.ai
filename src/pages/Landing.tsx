@@ -14,7 +14,7 @@ export default function Landing() {
       <main className="flex-1 flex flex-col items-center">
         <header className="w-full pt-16 pb-12 px-6 text-center max-w-4xl mx-auto flex flex-col items-center">
           <LogoAnim />
-          <h1 className="sr-only">Threndle AI. Every business runs on loose threads, we tie them off.</h1>
+          <h1 className="sr-only">threndle.ai. Every business runs on loose threads, we tie them off.</h1>
           <p className="mt-8 text-lg leading-relaxed text-ink-soft max-w-2xl mx-auto">
             Cash flow nobody's watching. Leads going cold. A CRM nobody updates. We connect Claude to the tools you already use and put those loose ends on autopilot, starting with the one that's costing you the most.
           </p>
@@ -128,32 +128,75 @@ export default function Landing() {
 
         <section className="w-full bg-stone-raised py-20 px-6 border-y border-rule">
           <div className="max-w-3xl mx-auto">
-            <h2 className="font-serif font-medium text-3xl mb-8 text-center">Frequently asked questions</h2>
+            <h2 className="font-serif font-medium text-3xl mb-8 text-center">Claude Cowork FAQ</h2>
 
             <div className="space-y-8">
               <div>
-                <h3 className="font-semibold text-lg mb-2">What does Threndle AI do?</h3>
+                <h3 className="font-semibold text-lg mb-2">What is Claude Cowork for small business?</h3>
                 <p className="text-ink-soft text-base leading-relaxed">
-                  Threndle AI is an independent AI implementation consultancy for small businesses. We connect Claude to the tools you already use, including accounting, CRM, payments, email, files, and team ops, and put your biggest operational bottleneck on autopilot.
+                  Claude Cowork is threndle.ai's approach to embedding Claude into a small business's daily operations. Instead of replacing staff or switching software, we connect Claude to the tools the business already uses, including QuickBooks, HubSpot, Slack, Google Workspace, and others, so it can handle repetitive tasks, surface insights, and keep workflows moving.
                 </p>
               </div>
 
               <div>
-                <h3 className="font-semibold text-lg mb-2">Who is Threndle AI for?</h3>
+                <h3 className="font-semibold text-lg mb-2">What does Claude Cowork actually mean?</h3>
+                <p className="text-ink-soft text-base leading-relaxed">
+                  It means Claude works alongside your team as a digital assistant with access to your real business data. It can reconcile transactions, draft follow-up emails, update CRM records, summarize meetings, and chase overdue invoices, always under your control and always starting from the bottlenecks you choose.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-lg mb-2">Is Claude Cowork secure?</h3>
+                <p className="text-ink-soft text-base leading-relaxed">
+                  Yes. We do not store your credentials or raw business data on our servers. Claude connects through official APIs and OAuth where available, using read-and-write permissions you approve. You keep ownership of your data, and any automation can be paused or revoked at any time. We also review each integration before it goes live.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-lg mb-2">What do I need to get started with Claude Cowork?</h3>
+                <p className="text-ink-soft text-base leading-relaxed">
+                  You need the cloud tools you already use, a clear bottleneck you want fixed first, and about an hour for a kickoff call. Most businesses start with one workflow, like invoice reconciliation or lead follow-up, and expand from there. We do the technical setup and train your team.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-lg mb-2">Which tools can Claude Cowork connect to?</h3>
+                <p className="text-ink-soft text-base leading-relaxed">
+                  Accounting tools such as QuickBooks, Xero, Wave, Sage, and Zoho Books. Payments such as Stripe, PayPal, Square, and QuickBooks Payments. Payroll platforms. CRMs such as HubSpot, Salesforce, Zoho Bigin, and Pipedrive. Email and file systems such as Google Workspace, Microsoft 365, Dropbox, and OneDrive. Team and ops tools such as Slack, Monday.com, Asana, ClickUp, and Notion. Plus booking, e-commerce, and advertising platforms.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-20 px-6">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="font-serif font-medium text-3xl mb-8 text-center">Frequently asked questions</h2>
+
+            <div className="space-y-8">
+              <div>
+                <h3 className="font-semibold text-lg mb-2">What does threndle.ai do?</h3>
+                <p className="text-ink-soft text-base leading-relaxed">
+                  threndle.ai is an independent AI implementation consultancy for small businesses. We connect Claude to the tools you already use, including accounting, CRM, payments, email, files, and team ops, and put your biggest operational bottleneck on autopilot.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-lg mb-2">Who is threndle.ai for?</h3>
                 <p className="text-ink-soft text-base leading-relaxed">
                   Small business owners and operators in the Fraser Valley and surrounding areas who are losing hours to manual follow-up, stale data, or software that does not talk to each other. We work with businesses that already use tools like QuickBooks, HubSpot, Slack, Google Workspace, Stripe, and Monday.com.
                 </p>
               </div>
 
               <div>
-                <h3 className="font-semibold text-lg mb-2">What happens during the Threndle AI diagnostic?</h3>
+                <h3 className="font-semibold text-lg mb-2">What happens during the threndle.ai diagnostic?</h3>
                 <p className="text-ink-soft text-base leading-relaxed">
                   We ask what is actually eating your week across money, sales, marketing, customer service, admin, and hiring. In about three minutes you get a straight recommendation on which bottleneck to fix first, not a packaged sales pitch.
                 </p>
               </div>
 
               <div>
-                <h3 className="font-semibold text-lg mb-2">Which tools can Threndle AI connect to Claude?</h3>
+                <h3 className="font-semibold text-lg mb-2">Which tools can threndle.ai connect to Claude?</h3>
                 <p className="text-ink-soft text-base leading-relaxed">
                   We connect accounting tools such as QuickBooks, Xero, Wave, Sage, and Zoho Books. CRMs such as HubSpot, Salesforce, Zoho Bigin, and Pipedrive. Payments such as Stripe, PayPal, Square, and QuickBooks Payments. Payroll platforms. Email and file systems such as Google Workspace, Microsoft 365, Dropbox, and OneDrive. And team tools such as Slack, Monday.com, Asana, ClickUp, and Notion.
                 </p>
@@ -167,14 +210,14 @@ export default function Landing() {
               </div>
 
               <div>
-                <h3 className="font-semibold text-lg mb-2">Where is Threndle AI based?</h3>
+                <h3 className="font-semibold text-lg mb-2">Where is threndle.ai based?</h3>
                 <p className="text-ink-soft text-base leading-relaxed">
-                  Threndle AI is based in the Fraser Valley, British Columbia, Canada. We work with local small businesses and can also support remote engagements across Canada.
+                  threndle.ai is based in the Fraser Valley, British Columbia, Canada. We work with local small businesses and can also support remote engagements across Canada.
                 </p>
               </div>
 
               <div>
-                <h3 className="font-semibold text-lg mb-2">How do I get started with Threndle AI?</h3>
+                <h3 className="font-semibold text-lg mb-2">How do I get started with threndle.ai?</h3>
                 <p className="text-ink-soft text-base leading-relaxed">
                   Start with the diagnostic questionnaire on our website, or email <a href="mailto:hello@threndle.ai" className="underline hover:text-teal">hello@threndle.ai</a>. We confirm the scope on a short call before anything is signed, then connect your tools and deliver the first workflow against real data.
                 </p>
@@ -185,7 +228,7 @@ export default function Landing() {
       </main>
 
       <footer className="text-center py-12 px-6 font-mono text-xs text-ink-soft tracking-wider">
-        THRENDLE AI · Fraser Valley, BC · hello@threndle.ai
+        threndle.ai · Fraser Valley, BC · hello@threndle.ai
       </footer>
     </div>
   );
