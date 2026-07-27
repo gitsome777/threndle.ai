@@ -228,7 +228,8 @@ export default function Landing() {
       </main>
 
       <footer className="text-center py-12 px-6 font-mono text-xs text-ink-soft tracking-wider">
-        threndle.ai · Fraser Valley, BC · hello@threndle.ai
+        threndle.ai · Fraser Valley, BC · hello@threndle.ai ·{" "}
+        <a href="https://www.linkedin.com/company/threndle-ai/" target="_blank" rel="noopener noreferrer" className="underline hover:text-teal">LinkedIn</a>
       </footer>
     </div>
   );
