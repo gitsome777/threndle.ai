@@ -8,7 +8,7 @@ import Gnome from "../components/Gnome";
  *
  * These tokens are regenerated every time the webform is rebuilt in Bigin.
  * If submissions stop creating records, re-copy them from the form's embed code.
- * Field ids (POTENTIALCF*) come from the same embed and must match exactly —
+ * Field ids (POTENTIALCF*) come from the same embed and must match exactly.
  * Zoho silently discards a value posted under an unknown field name.
  */
 const BIGIN = {
@@ -130,9 +130,9 @@ export default function Diagnostic() {
     let tier, price, why, includes;
 
     if (score >= 11 || (formData.budget === 'high' && formData.bottlenecks.length >= 3)) {
-      tier = 'Tier 3 — Partner';
-      price = '$750–$1,500/month retainer';
-      why = `${formData.bizName || 'This business'} is juggling several bottlenecks at once with real budget and urgency behind fixing them. A one-time setup won't hold — this needs ongoing tuning as the business keeps changing.`;
+      tier = 'Tier 3: Partner';
+      price = '$750 to $1,500/month retainer';
+      why = `${formData.bizName || 'This business'} is juggling several bottlenecks at once with real budget and urgency behind fixing them. A one-time setup won't hold. This needs ongoing tuning as the business keeps changing.`;
       includes = [
         'Full-stack setup across finance, sales, and marketing tools',
         'Monthly monitoring and tuning of every deployed workflow',
@@ -140,20 +140,20 @@ export default function Diagnostic() {
         'Priority troubleshooting, same-week response'
       ];
     } else if (score >= 6 || heavyTop) {
-      tier = 'Tier 2 — Growth';
-      price = '$6,000–$9,000 fixed fee · 4–6 weeks';
+      tier = 'Tier 2: Growth';
+      price = '$6,000 to $9,000 fixed fee · 4 to 6 weeks';
       why = heavyTop
-        ? `${formData.bizName || 'This business'}'s top priority is marketing — that needs a brand and content audit before anything useful can run, which doesn't fit inside a 2-week Foundation build regardless of score.`
+        ? `${formData.bizName || 'This business'}'s top priority is marketing. That needs a brand and content audit before anything useful can run, which doesn't fit inside a 2-week Foundation build regardless of score.`
         : `${formData.bizName || 'This business'} has more than one real bottleneck and enough manual time bleeding out weekly to justify a fuller build than a single fix.`;
       includes = [
         'Full tool stack connected (accounting, payments, CRM, calendar)',
-        '3–5 recurring workflows across the flagged bottleneck areas',
+        '3 to 5 recurring workflows across the flagged bottleneck areas',
         'Weekly reporting cadence installed',
         '60-day tuning window as real usage surfaces gaps'
       ];
     } else {
-      tier = 'Tier 1 — Foundation';
-      price = '$3,000–$3,500 fixed fee · 2 weeks';
+      tier = 'Tier 1: Foundation';
+      price = '$3,000 to $3,500 fixed fee · 2 weeks';
       why = `${formData.bizName || 'This business'} has a clear top bottleneck worth solving first, without committing to a full build before seeing it work.`;
       includes = [
         'Kickoff interview to lock in the single highest-impact fix',
@@ -205,7 +205,7 @@ export default function Diagnostic() {
 
       // Internal context fields.
       set("POTENTIALCF10", formData.usesTools === "no"
-        ? "Mostly spreadsheets and memory — no current apps."
+        ? "Mostly spreadsheets and memory. No current apps."
         : `Uses apps: ${connectorCount > 0 ? "see connector fields" : "no specific tools selected"}. Other tools: ${formData.otherTools.trim() || "none given"}.`
       );
       set("POTENTIALCF11", why);
@@ -399,7 +399,7 @@ export default function Diagnostic() {
               <div className="font-mono text-sm tracking-widest text-brass-dim uppercase">07</div>
               <h2 className="font-serif text-2xl font-semibold">What's already in use</h2>
             </div>
-            <p className="text-ink-soft text-sm mb-6">If it's mostly spreadsheets and memory, say so — that's a real answer, not a wrong one.</p>
+            <p className="text-ink-soft text-sm mb-6">If it's mostly spreadsheets and memory, say so. That's a real answer, not a wrong one.</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
@@ -504,7 +504,7 @@ export default function Diagnostic() {
                     onChange={() => handleBottleneckToggle(opt.id)}
                   />
                   <div>
-                    <span className="font-semibold">{opt.label}</span> {opt.desc && <span>— {opt.desc}</span>}
+                    <span className="font-semibold">{opt.label}</span> {opt.desc && <span>: {opt.desc}</span>}
                   </div>
                 </label>
               ))}
@@ -619,7 +619,7 @@ export default function Diagnostic() {
           <div className="flex flex-col items-center">
             <div className="flex items-center justify-center gap-4 mb-6 font-mono text-xs tracking-widest uppercase text-brass-dim">
               <div className="w-2 h-2 rotate-45 bg-brass" />
-              Last stitch — tie it off
+              Last stitch. Tie it off
               <div className="w-2 h-2 rotate-45 bg-brass" />
             </div>
             
@@ -638,7 +638,7 @@ export default function Diagnostic() {
             <div className="absolute -top-3 left-6 px-3 bg-stone font-mono text-xs tracking-widest text-[#B8562B]">DIDN'T SEND</div>
             <h3 className="font-serif text-2xl font-semibold mb-3">That didn't go through</h3>
             <p className="text-base leading-relaxed mb-2">
-              Your answers didn't reach us — so nothing was recorded and no one will follow up. That's on our end,
+              Your answers didn't reach us, so nothing was recorded and no one will follow up. That's on our end,
               not yours.
             </p>
             <p className="text-ink-soft text-sm">
@@ -652,7 +652,7 @@ export default function Diagnostic() {
         {submitted && !sendFailed && (
           <div className="mt-16 p-8 border-2 border-teal bg-teal-soft relative animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="absolute -top-3 left-6 px-3 bg-stone font-mono text-xs tracking-widest text-brass-dim">TIED OFF</div>
-            <h3 className="font-serif text-2xl font-semibold mb-3">Got it — thank you</h3>
+            <h3 className="font-serif text-2xl font-semibold mb-3">Got it. Thank you</h3>
             <p className="text-base leading-relaxed mb-2">
               Your answers are with us, and we'll be in touch at{" "}
               <span className="font-semibold">{formData.email}</span> to walk through what we found.
