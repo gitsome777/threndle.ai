@@ -39,6 +39,49 @@ export default function Landing() {
           </div>
           <Cards />
         </section>
+
+        <section className="w-full bg-stone-raised py-20 px-6 border-y border-rule">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="font-serif font-medium text-3xl mb-8 text-center">Questions about Claude Cowork</h2>
+
+            <div className="space-y-8">
+              <div>
+                <h3 className="font-semibold text-lg mb-2">What is Claude Cowork for small business?</h3>
+                <p className="text-ink-soft text-base leading-relaxed">
+                  Claude Cowork is Threndle AI's approach to embedding Claude into a small business's daily operations. Instead of replacing staff or switching software, we connect Claude to the tools you already use — QuickBooks, HubSpot, Slack, Google Workspace, and others — so it can handle repetitive tasks, surface insights, and keep workflows moving.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-lg mb-2">What does Claude Cowork actually mean?</h3>
+                <p className="text-ink-soft text-base leading-relaxed">
+                  It means Claude works alongside your team as a digital assistant with access to your real business data. It can reconcile transactions, draft follow-up emails, update CRM records, summarize meetings, and chase overdue invoices — always under your control and always starting from the bottlenecks you choose.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-lg mb-2">Is Claude Cowork secure?</h3>
+                <p className="text-ink-soft text-base leading-relaxed">
+                  Yes. We do not store your credentials or raw business data on our servers. Claude connects through official APIs and OAuth where available, using read-and-write permissions you approve. You keep ownership of your data, and any automation can be paused or revoked at any time. We also review each integration before it goes live.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-lg mb-2">What do I need to get started with Claude Cowork?</h3>
+                <p className="text-ink-soft text-base leading-relaxed">
+                  You need the cloud tools you already use, a clear bottleneck you want fixed first, and about an hour for a kickoff call. Most businesses start with one workflow — like invoice reconciliation or lead follow-up — and expand from there. We do the technical setup and train your team.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-lg mb-2">Which tools can Claude Cowork connect to?</h3>
+                <p className="text-ink-soft text-base leading-relaxed">
+                  Accounting tools such as QuickBooks, Xero, Wave, Sage, and Zoho Books; payments such as Stripe, PayPal, Square, and QuickBooks Payments; payroll platforms; CRMs such as HubSpot, Salesforce, Zoho Bigin, and Pipedrive; email and file systems such as Google Workspace, Microsoft 365, Dropbox, and OneDrive; team and ops tools such as Slack, Monday.com, Asana, ClickUp, and Notion; plus booking, e-commerce, and advertising platforms.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <footer className="text-center py-12 px-6 font-mono text-xs text-ink-soft tracking-wider">
