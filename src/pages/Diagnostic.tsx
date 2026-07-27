@@ -728,7 +728,7 @@ export default function Diagnostic() {
           ))}
 
           <input type="text" name="Pipeline" defaultValue="Sales Pipeline Standard" />
-          <input type="text" name="Stage" defaultValue="Qualification" />
+          <input type="text" name="Stage" defaultValue="Introduction" />
         </form>
       </main>
 
