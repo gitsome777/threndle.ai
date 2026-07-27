@@ -7,7 +7,7 @@ const cards = [
   {
     num: "01",
     title: "Diagnostic",
-    desc: "You tell us what's actually eating the week — not a menu, your real answer.",
+    desc: "You tell us what's actually eating the week, not a menu. Your real answer.",
   },
   {
     num: "02",
@@ -22,7 +22,7 @@ const cards = [
   {
     num: "04",
     title: "Kickoff",
-    desc: "Tools connected, first workflow running live against your real data — not a demo.",
+    desc: "Tools connected, first workflow running live against your real data. Not a demo.",
   },
   {
     num: "05",
