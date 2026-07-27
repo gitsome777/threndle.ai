@@ -33,7 +33,7 @@ export default function LogoAnim() {
               type: "spring",
               bounce: 0.5
             }}
-            className="absolute bottom-[35%] left-[-25%] md:bottom-[40%] md:left-[-22%] z-20 w-[60px] h-[80px] md:w-[80px] md:h-[100px] pointer-events-none"
+            className="absolute bottom-[35%] left-[-10%] md:bottom-[40%] md:left-[-10%] z-20 w-[60px] h-[80px] md:w-[80px] md:h-[100px] pointer-events-none"
           >
             <img 
                src="/gnome.svg" 
