@@ -549,58 +549,34 @@ function Page5({
   sendFailed: boolean;
   key?: React.Key;
 }) {
-  const gnomes = [
-    { left: "4%", delay: 0.0, scale: 1.0, rotate: -12, flip: true },
-    { left: "18%", delay: 0.12, scale: 0.8, rotate: 18, flip: false },
-    { left: "34%", delay: 0.22, scale: 0.65, rotate: -8, flip: true },
-    { left: "58%", delay: 0.08, scale: 0.9, rotate: 14, flip: false },
-    { left: "76%", delay: 0.18, scale: 0.7, rotate: -20, flip: false },
-    { left: "90%", delay: 0.28, scale: 0.85, rotate: 10, flip: true },
-  ];
-
   return (
-    <div className="relative pt-20">
-      {gnomes.map((g, i) => (
-        <motion.div
-          key={i}
-          initial={{
-            y: -320,
-            opacity: 0,
-            x: g.rotate * 1.5,
-            rotate: g.rotate * 2.5,
-            scale: g.scale,
-          }}
-          animate={{
-            y: [null, 0, -55, 0, -22, 0, -8, 0],
-            opacity: [0, 1, 1, 1, 1, 1, 1, 1],
-            x: [null, g.rotate * 0.5, 0, 0, 0, 0, 0, 0],
-            rotate: [g.rotate * 2.5, g.rotate, -8, 0, 0, 0, 0, 0],
-            scale: g.scale,
-          }}
-          transition={{ duration: 1.6, delay: g.delay, ease: "easeOut" }}
-          className="absolute z-30 pointer-events-none w-12 h-16 drop-shadow-lg"
-          style={{ left: g.left, top: -90 - (i % 3) * 20 }}
-        >
-          <img
-            src="/gnome.svg"
-            alt="Gnome"
-            className={cn("w-full h-full object-contain", g.flip ? "-scale-x-100" : "")}
-          />
-        </motion.div>
-      ))}
-
+    <div className="relative pt-8">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="relative p-8 md:p-12 bg-stone-raised border-2 border-teal rounded-sm shadow-lg text-center overflow-hidden"
+        className="relative p-6 md:p-8 bg-stone-raised border-2 border-teal rounded-sm shadow-lg text-center"
       >
+        {/* Falling gnome, same spring drop as the homepage card series */}
+        <motion.div
+          initial={{ y: -150, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ type: "spring", bounce: 0.5, duration: 0.8, delay: 0.6 }}
+          className="absolute -top-16 right-4 md:-right-6 z-30 pointer-events-none w-14 h-20 drop-shadow-lg"
+        >
+          <img
+            src="/gnome.svg"
+            alt="Gnome"
+            className="absolute inset-0 w-full h-full object-contain"
+          />
+        </motion.div>
+
         <div className="absolute -top-3 left-6 px-3 bg-stone font-mono text-xs tracking-widest text-brass-dim">TIED OFF</div>
-        <h2 className="font-serif text-3xl font-semibold mb-4">Got it. Thank you</h2>
-        <p className="text-base leading-relaxed mb-4">
+        <h2 className="font-serif text-2xl font-semibold mb-3">Got it. Thank you</h2>
+        <p className="text-base leading-relaxed mb-3">
           Your answers are on their way. Check <span className="font-semibold">{formData.email}</span>, for a confirmation email (check your junk email just in case). You'll need to confirm before we can send your Custom Implementation Plan.
         </p>
-        <p className="text-ink-soft text-sm mb-8">
+        <p className="text-ink-soft text-sm mb-5">
           Anything to add?{" "}
           <a href="mailto:hello@threndle.ai" className="underline hover:text-teal">
             hello@threndle.ai
@@ -608,7 +584,7 @@ function Page5({
         </p>
 
         {sendFailed && (
-          <div className="mb-8 p-4 border border-[#B8562B] bg-stone text-left">
+          <div className="mb-5 p-4 border border-[#B8562B] bg-stone text-left">
             <p className="text-[#B8562B] font-medium mb-1">That didn't go through to our system.</p>
             <p className="text-sm text-ink-soft">
               Please email{" "}
@@ -624,11 +600,11 @@ function Page5({
         )}
 
         {result && (
-          <div className="mt-8 p-6 border border-ink bg-stone text-left">
+          <div className="mt-5 p-5 border border-ink bg-stone text-left">
             <div className="font-mono text-xs tracking-widest text-brass-dim mb-2 uppercase">Diagnosis</div>
-            <h3 className="font-serif text-2xl font-semibold text-teal mb-4">{result.tier}</h3>
-            <p className="text-base leading-relaxed mb-4">{result.why}</p>
-            <ul className="list-disc pl-5 space-y-2 text-sm text-ink-soft">
+            <h3 className="font-serif text-xl font-semibold text-teal mb-3">{result.tier}</h3>
+            <p className="text-base leading-relaxed mb-3">{result.why}</p>
+            <ul className="list-disc pl-5 space-y-1 text-sm text-ink-soft">
               {result.includes.map((inc, i) => (
                 <li key={i}>{inc}</li>
               ))}
@@ -641,11 +617,41 @@ function Page5({
 }
 
 export default function Diagnostic() {
-  const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState<FormData>(initialFormData);
-  const [submitted, setSubmitted] = useState(false);
+  // Dev shortcut: /diagnostic?preview=thanks jumps straight to the thank-you
+  // page with sample data, skipping the form and the Bigin POST.
+  const previewThanks =
+    typeof window !== "undefined" &&
+    new URLSearchParams(window.location.search).get("preview") === "thanks";
+
+  const [step, setStep] = useState(previewThanks ? 5 : 1);
+  const [formData, setFormData] = useState<FormData>(
+    previewThanks
+      ? {
+          ...initialFormData,
+          firstName: "Preview",
+          lastName: "User",
+          bizName: "Preview Co",
+          email: "you@example.com",
+        }
+      : initialFormData
+  );
+  const [submitted, setSubmitted] = useState(previewThanks);
   const [sendFailed, setSendFailed] = useState(false);
-  const [result, setResult] = useState<{ tier: string; price: string; why: string; includes: string[] } | null>(null);
+  const [result, setResult] = useState<{ tier: string; price: string; why: string; includes: string[] } | null>(
+    previewThanks
+      ? {
+          tier: "Tier 2: Growth",
+          price: "$6,000 to $9,000 fixed fee · 4 to 6 weeks",
+          why: "Preview Co has more than one real bottleneck and enough manual time bleeding out weekly to justify a fuller build than a single fix.",
+          includes: [
+            "Full tool stack connected (accounting, payments, CRM, calendar)",
+            "3 to 5 recurring workflows across the flagged bottleneck areas",
+            "Weekly reporting cadence installed",
+            "60-day tuning window as real usage surfaces gaps",
+          ],
+        }
+      : null
+  );
   const [errors, setErrors] = useState<Record<string, boolean>>({});
   const biginForm = useRef<HTMLFormElement>(null);
   const biginFrame = useRef<HTMLIFrameElement>(null);
