@@ -1,0 +1,65 @@
+# threndle.ai
+
+> Independent AI implementation consultancy for small businesses in the Fraser Valley,
+> British Columbia, Canada. We connect Claude (the AI assistant made by Anthropic) to the
+> tools a business already uses — accounting, CRM, payments, email, files, and team ops —
+> and put the biggest operational bottleneck on autopilot.
+
+We do not replace software or ask clients to switch platforms. We build small, reliable
+workflows inside the existing stack. Every engagement starts with a diagnostic rather than a
+packaged offer: we ask what is actually consuming the week across money, sales, marketing,
+customer service, admin, and hiring, then scope against the answer.
+
+Contact: hello@threndle.ai · Fraser Valley, BC, Canada · https://www.linkedin.com/company/threndle-ai/
+
+## Services
+
+- Claude AI automation for bookkeeping and cash flow — reconcile Stripe payouts to QuickBooks,
+  chase overdue invoices, flag mismatched transactions.
+- CRM automation that keeps leads warm — update records in HubSpot, Pipedrive, or Zoho Bigin,
+  draft follow-ups, flag leads that have gone quiet.
+- AI workflow automation for admin and reporting — summarize meetings, build weekly reports,
+  keep Slack or Monday.com current without manual copy and paste.
+- Implementation without replacing existing tools — Claude works inside QuickBooks, HubSpot,
+  Slack, Google Workspace, Stripe, and dozens more.
+
+## Pricing
+
+- Foundation — fixed-price scope for one bottleneck, typically CA$3,000 to CA$3,500.
+- Multi-workflow builds — CA$6,000 to CA$9,000.
+- Partner retainer — CA$750 to CA$1,500 per month, ongoing.
+
+Final pricing is set after the diagnostic and a scoping call. Figures above are ranges, not quotes.
+
+## Key pages
+
+- [Home](https://threndle.ai/): full service overview, plain-English explainers, and both FAQ sections.
+- [Diagnostic](https://threndle.ai/diagnostic): a short questionnaire that returns a recommendation
+  on which bottleneck to fix first. Interactive form, not reference content.
+
+## Concepts explained in plain English
+
+- [What are AI agents and what can they do?](https://threndle.ai/#what-are-ai-agents)
+- [What is MCP?](https://threndle.ai/#what-is-mcp)
+- [What is an API?](https://threndle.ai/#what-is-an-api)
+- [What is a connector?](https://threndle.ai/#what-is-a-connector)
+- [What is a skill?](https://threndle.ai/#what-is-a-skill)
+- [What does Claude Cowork mean for my business and my time?](https://threndle.ai/#what-claude-cowork-means-for-my-time)
+
+## Claude Cowork FAQ
+
+- [What is Claude Cowork for small business?](https://threndle.ai/#claude-cowork-for-small-business)
+- [What does Claude Cowork actually mean?](https://threndle.ai/#what-does-claude-cowork-mean)
+- [Is Claude Cowork secure?](https://threndle.ai/#is-claude-cowork-secure)
+- [What do I need to get started with Claude Cowork?](https://threndle.ai/#what-do-i-need-to-get-started)
+- [Which tools can Claude Cowork connect to?](https://threndle.ai/#which-tools-can-claude-cowork-connect-to)
+
+## General FAQ
+
+- [What does threndle.ai do?](https://threndle.ai/#what-does-threndle-ai-do)
+- [Who is threndle.ai for?](https://threndle.ai/#who-is-threndle-ai-for)
+- [What happens during the threndle.ai diagnostic?](https://threndle.ai/#what-happens-during-the-diagnostic)
+- [Which tools can threndle.ai connect to Claude?](https://threndle.ai/#which-tools-can-threndle-ai-connect-to-claude)
+- [How much does an AI implementation project cost?](https://threndle.ai/#how-much-does-an-ai-implementation-project-cost)
+- [Where is threndle.ai based?](https://threndle.ai/#where-is-threndle-ai-based)
+- [How do I get started with threndle.ai?](https://threndle.ai/#how-do-i-get-started-with-threndle-ai)
