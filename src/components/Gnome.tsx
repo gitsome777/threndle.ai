@@ -15,8 +15,9 @@ export default function Gnome({ className }: GnomeProps) {
       className={cn("pointer-events-none w-14 h-20 z-30 drop-shadow-lg", className)}
     >
       <img
-        src="/gnome.svg"
-        alt="Gnome"
+        src="/threndle-ai-gnome.svg"
+        alt=""
+        aria-hidden="true"
         className="w-full h-full object-contain"
       />
     </motion.div>

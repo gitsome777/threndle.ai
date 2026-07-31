@@ -35,9 +35,9 @@ export default function LogoAnim() {
             }}
             className="absolute bottom-[35%] left-[65%] -translate-x-1/2 md:bottom-[40%] md:left-[65%] z-20 w-[60px] h-[80px] md:w-[80px] md:h-[100px] pointer-events-none"
           >
-            <img 
-               src="/gnome.svg" 
-               alt="Gnome" 
+            <img
+               src="/threndle-ai-gnome.svg"
+               alt="The threndle.ai gnome mascot perched on the threndle.ai wordmark"
                className="absolute inset-0 w-full h-full object-contain"
             />
           </motion.div>

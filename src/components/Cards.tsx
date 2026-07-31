@@ -102,9 +102,10 @@ function AnimatedCard({ card, idx }: { card: any, idx: number, key?: any }) {
               isEven ? "left-4 md:-left-6" : "right-4 md:-right-6"
             )}
           >
-            <img 
-               src="/gnome.svg" 
-               alt="Gnome" 
+            <img
+               src="/threndle-ai-gnome.svg"
+               alt=""
+               aria-hidden="true"
                className={cn("absolute inset-0 w-full h-full object-contain", isLast ? "" : (isEven ? "-scale-x-100" : ""))}
             />
           </motion.div>

@@ -116,8 +116,9 @@ function FallingGnome({ side, delay = 0 }: { side: "left" | "right"; delay?: num
       )}
     >
       <img
-        src="/gnome.svg"
-        alt="Gnome"
+        src="/threndle-ai-gnome.svg"
+        alt=""
+        aria-hidden="true"
         className={cn("absolute inset-0 w-full h-full object-contain", side === "left" ? "-scale-x-100" : "")}
       />
     </motion.div>
@@ -565,8 +566,9 @@ function Page5({
           className="absolute -top-16 right-4 md:-right-6 z-30 pointer-events-none w-14 h-20 drop-shadow-lg"
         >
           <img
-            src="/gnome.svg"
-            alt="Gnome"
+            src="/threndle-ai-gnome.svg"
+            alt=""
+            aria-hidden="true"
             className="absolute inset-0 w-full h-full object-contain"
           />
         </motion.div>
