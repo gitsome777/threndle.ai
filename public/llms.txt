@@ -5,6 +5,9 @@
 > tools a business already uses — accounting, CRM, payments, email, files, and team ops —
 > and put the biggest operational bottleneck on autopilot.
 
+Service area: on-site work in Abbotsford, Chilliwack, Mission, Langley, Maple Ridge, Surrey,
+Agassiz, and Hope, British Columbia. Remote engagements are supported across Canada.
+
 We do not replace software or ask clients to switch platforms. We build small, reliable
 workflows inside the existing stack. Every engagement starts with a diagnostic rather than a
 packaged offer: we ask what is actually consuming the week across money, sales, marketing,

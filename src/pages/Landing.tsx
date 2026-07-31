@@ -212,7 +212,7 @@ export default function Landing() {
               <div>
                 <h3 id="where-is-threndle-ai-based" className="font-semibold text-lg mb-2 scroll-mt-24">Where is threndle.ai based?</h3>
                 <p className="text-ink-soft text-base leading-relaxed">
-                  threndle.ai is based in the Fraser Valley, British Columbia, Canada. We work with local small businesses and can also support remote engagements across Canada.
+                  threndle.ai is based in the Fraser Valley, British Columbia, Canada. We work on site with small businesses in Abbotsford, Chilliwack, Mission, Langley, Maple Ridge, Surrey, Agassiz, and Hope, and can also support remote engagements across Canada.
                 </p>
               </div>
 

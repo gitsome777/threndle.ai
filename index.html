@@ -41,16 +41,21 @@
       "image": "https://threndle.ai/assets/og-image.png",
       "email": "hello@threndle.ai",
       "serviceType": "AI implementation consulting and workflow automation",
-      "areaServed": {
-        "@type": "Place",
-        "name": "Fraser Valley, British Columbia, Canada",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Fraser Valley",
-          "addressRegion": "BC",
-          "addressCountry": "CA"
-        }
-      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Fraser Valley, British Columbia, Canada"
+        },
+        { "@type": "City", "name": "Abbotsford", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+        { "@type": "City", "name": "Chilliwack", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+        { "@type": "City", "name": "Mission", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+        { "@type": "City", "name": "Langley", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+        { "@type": "City", "name": "Maple Ridge", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+        { "@type": "City", "name": "Surrey", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+        { "@type": "City", "name": "Agassiz", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+        { "@type": "City", "name": "Hope", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+        { "@type": "Country", "name": "Canada" }
+      ],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Fraser Valley",
@@ -194,7 +199,7 @@
           "url": "https://threndle.ai/#where-is-threndle-ai-based",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "threndle.ai is based in the Fraser Valley, British Columbia, Canada. We work with local small businesses and can also support remote engagements across Canada."
+            "text": "threndle.ai is based in the Fraser Valley, British Columbia, Canada. We work on site with small businesses in Abbotsford, Chilliwack, Mission, Langley, Maple Ridge, Surrey, Agassiz, and Hope, and can also support remote engagements across Canada."
           }
         },
         {
