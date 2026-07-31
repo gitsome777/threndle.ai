@@ -14,11 +14,12 @@ export default function Gnome({ className }: GnomeProps) {
       transition={{ type: "spring", bounce: 0.5, duration: 0.8, delay: 0.1 }}
       className={cn("pointer-events-none w-14 h-20 z-30 drop-shadow-lg", className)}
     >
-      <img
-        src="/threndle-ai-gnome.svg"
-        alt=""
+      {/* Decorative: a CSS background, not an <img>, so it stays out of the
+          accessibility tree entirely and needs no alt attribute. */}
+      <div
         aria-hidden="true"
-        className="w-full h-full object-contain"
+        style={{ backgroundImage: "url(/threndle-ai-gnome.svg)" }}
+        className="w-full h-full bg-contain bg-center bg-no-repeat"
       />
     </motion.div>
   );

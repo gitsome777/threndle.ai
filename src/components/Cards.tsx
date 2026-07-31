@@ -102,11 +102,12 @@ function AnimatedCard({ card, idx }: { card: any, idx: number, key?: any }) {
               isEven ? "left-4 md:-left-6" : "right-4 md:-right-6"
             )}
           >
-            <img
-               src="/threndle-ai-gnome.svg"
-               alt=""
+            {/* Decorative: a CSS background, not an <img>, so it stays out of the
+                accessibility tree entirely and needs no alt attribute. */}
+            <div
                aria-hidden="true"
-               className={cn("absolute inset-0 w-full h-full object-contain", isLast ? "" : (isEven ? "-scale-x-100" : ""))}
+               style={{ backgroundImage: "url(/threndle-ai-gnome.svg)" }}
+               className={cn("absolute inset-0 w-full h-full bg-contain bg-center bg-no-repeat", isLast ? "" : (isEven ? "-scale-x-100" : ""))}
             />
           </motion.div>
 

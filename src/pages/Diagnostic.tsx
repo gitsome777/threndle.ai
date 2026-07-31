@@ -115,11 +115,12 @@ function FallingGnome({ side, delay = 0 }: { side: "left" | "right"; delay?: num
         side === "left" ? "left-4 md:-left-6" : "right-4 md:-right-6"
       )}
     >
-      <img
-        src="/threndle-ai-gnome.svg"
-        alt=""
+      {/* Decorative: a CSS background, not an <img>, so it stays out of the
+          accessibility tree entirely and needs no alt attribute. */}
+      <div
         aria-hidden="true"
-        className={cn("absolute inset-0 w-full h-full object-contain", side === "left" ? "-scale-x-100" : "")}
+        style={{ backgroundImage: "url(/threndle-ai-gnome.svg)" }}
+        className={cn("absolute inset-0 w-full h-full bg-contain bg-center bg-no-repeat", side === "left" ? "-scale-x-100" : "")}
       />
     </motion.div>
   );
@@ -565,11 +566,12 @@ function Page5({
           transition={{ type: "spring", bounce: 0.5, duration: 0.8, delay: 0.6 }}
           className="absolute -top-16 right-4 md:-right-6 z-30 pointer-events-none w-14 h-20 drop-shadow-lg"
         >
-          <img
-            src="/threndle-ai-gnome.svg"
-            alt=""
+          {/* Decorative: a CSS background, not an <img>, so it stays out of the
+              accessibility tree entirely and needs no alt attribute. */}
+          <div
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-contain"
+            style={{ backgroundImage: "url(/threndle-ai-gnome.svg)" }}
+            className="absolute inset-0 w-full h-full bg-contain bg-center bg-no-repeat"
           />
         </motion.div>
 
