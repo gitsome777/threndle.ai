@@ -14,7 +14,9 @@ export default function Landing() {
       <main className="flex-1 flex flex-col items-center">
         <header className="w-full pt-16 pb-12 px-6 text-center max-w-4xl mx-auto flex flex-col items-center">
           <LogoAnim />
-          <h1 className="sr-only">threndle.ai. Every business runs on loose threads, we tie them off.</h1>
+          {/* The visible <h1> is the "AI implementation for small businesses in Fraser
+              Valley" section heading below. Bing reported "h1 missing" while an sr-only
+              h1 sat here: it renders 1x1 and clipped, and hidden headings are discounted. */}
           <p className="mt-8 text-lg leading-relaxed text-ink-soft max-w-2xl mx-auto">
             Cash flow nobody's watching. Leads going cold. A CRM nobody updates. We connect Claude to the tools you already use and put those loose ends on autopilot, starting with the one that's costing you the most.
           </p>
@@ -42,7 +44,7 @@ export default function Landing() {
 
         <section className="w-full bg-stone-raised py-20 px-6 border-y border-rule">
           <div className="max-w-3xl mx-auto">
-            <h2 className="font-serif font-medium text-3xl mb-4 text-center">AI implementation for small businesses in Fraser Valley</h2>
+            <h1 className="font-serif font-medium text-3xl mb-4 text-center">AI implementation for small businesses in Fraser Valley</h1>
             <p className="text-ink-soft text-base leading-relaxed mb-8 text-center max-w-2xl mx-auto">
               You do not need to replace your software or hire a technical team. We connect Claude, an AI assistant made by Anthropic, to the tools you already pay for. Then we build small, reliable workflows around the bottlenecks that are actually eating your week.
             </p>
