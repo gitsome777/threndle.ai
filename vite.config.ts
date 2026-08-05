@@ -14,6 +14,18 @@ export default defineConfig(() => {
         '@': path.resolve(__dirname, '.'),
       },
     },
+    build: {
+      rollupOptions: {
+        input: {
+          main: path.resolve(__dirname, 'index.html'),
+          // City landing pages are standalone static HTML (no React) so crawlers and
+          // AI answer engines that do not execute JavaScript get the full content.
+          'locations/abbotsford': path.resolve(__dirname, 'locations/abbotsford/index.html'),
+          'locations/chilliwack': path.resolve(__dirname, 'locations/chilliwack/index.html'),
+          'locations/langley': path.resolve(__dirname, 'locations/langley/index.html'),
+        },
+      },
+    },
     server: {
       // Set DISABLE_HMR=true to turn off hot reload and file watching, which stops
       // the preview flickering while a tool is making rapid edits.

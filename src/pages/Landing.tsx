@@ -230,8 +230,21 @@ export default function Landing() {
       </main>
 
       <footer className="text-center py-12 px-6 font-mono text-xs text-ink-soft tracking-wider">
+        <p className="mb-3">
+          Serving the Fraser Valley:{" "}
+          <a href="/locations/chilliwack/" className="underline hover:text-teal">Chilliwack</a>
+          {" · "}
+          <a href="/locations/langley/" className="underline hover:text-teal">Langley</a>
+          {" · "}
+          <a href="/locations/abbotsford/" className="underline hover:text-teal">Abbotsford</a>
+          {" · "}Mission · Maple Ridge · Surrey · Agassiz · Hope
+        </p>
         threndle.ai · Fraser Valley, BC · hello@threndle.ai ·{" "}
-        <a href="https://www.linkedin.com/company/threndle-ai/" target="_blank" rel="noopener noreferrer" className="underline hover:text-teal">LinkedIn</a>
+        <a href="https://www.linkedin.com/company/threndle-ai/" target="_blank" rel="noopener noreferrer" className="underline hover:text-teal">LinkedIn</a> ·{" "}
+        <a href="https://www.instagram.com/threndle.ai/" target="_blank" rel="noopener noreferrer" className="underline hover:text-teal">Instagram</a> ·{" "}
+        <a href="https://www.facebook.com/profile.php?id=61592102436833" target="_blank" rel="noopener noreferrer" className="underline hover:text-teal">Facebook</a> ·{" "}
+        <a href="https://www.tiktok.com/@threndle.ai" target="_blank" rel="noopener noreferrer" className="underline hover:text-teal">TikTok</a> ·{" "}
+        <a href="https://x.com/threndleai" target="_blank" rel="noopener noreferrer" className="underline hover:text-teal">X</a>
       </footer>
     </div>
   );

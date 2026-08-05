@@ -40,6 +40,15 @@ Final pricing is set after the diagnostic and a scoping call. Figures above are 
 - [Diagnostic](https://threndle.ai/diagnostic): a short questionnaire that returns a recommendation
   on which bottleneck to fix first. Interactive form, not reference content.
 
+## City pages
+
+- [AI implementation in Abbotsford, BC](https://threndle.ai/locations/abbotsford/): services,
+  published pricing, on-site coverage across the central Fraser Valley, and a local FAQ.
+- [AI implementation in Chilliwack, BC](https://threndle.ai/locations/chilliwack/): services,
+  published pricing, on-site coverage across the eastern Fraser Valley, and a local FAQ.
+- [AI implementation in Langley, BC](https://threndle.ai/locations/langley/): services,
+  published pricing, on-site coverage across the City and Township of Langley, and a local FAQ.
+
 ## Concepts explained in plain English
 
 - [What are AI agents and what can they do?](https://threndle.ai/#what-are-ai-agents)
