@@ -663,6 +663,21 @@ export default function Diagnostic() {
   // public URL, so this is the only thing standing between it and scripted spam.
   const honeypot = useRef<HTMLInputElement>(null);
 
+  // The static index.html shell ships the homepage's title and canonical, so give
+  // /diagnostic its own for crawlers that render JavaScript. Restore on unmount so
+  // client-side navigation back to the landing page doesn't keep them.
+  useEffect(() => {
+    const prevTitle = document.title;
+    const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    const prevCanonical = canonical?.getAttribute("href");
+    document.title = "AI implementation diagnostic | threndle.ai";
+    canonical?.setAttribute("href", "https://threndle.ai/diagnostic");
+    return () => {
+      document.title = prevTitle;
+      if (canonical && prevCanonical) canonical.setAttribute("href", prevCanonical);
+    };
+  }, []);
+
   // Bigin's script sets the hidden form's action. Without it the POST goes nowhere.
   useEffect(() => {
     if (document.getElementById("wf_script")) return;
