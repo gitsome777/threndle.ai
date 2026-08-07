@@ -286,10 +286,12 @@
   <body>
     <!-- Crawlers that do not execute JavaScript, which includes most AI answer
          engines, get this plain-text version of the site's substance inside #root.
-         React replaces it when the app mounts; for everyone else it is the page.
-         (This used to sit in <noscript>, but Bing discounts noscript content and
+         It is display:none so browsers never paint it: React replaces it when the
+         app mounts, and raw-HTML crawlers read it regardless of styling. (This
+         used to sit in <noscript>, but Bing discounts noscript content and
          reported the page's h1 missing.) Keep it in step with Landing.tsx. -->
     <div id="root">
+      <div style="display:none">
       <h1>threndle.ai. Every business runs on loose threads, we tie them off.</h1>
       <p>
         threndle.ai is an independent AI implementation consultancy for small businesses,
@@ -426,6 +428,7 @@
       <p>
         Start with the diagnostic questionnaire on our website, or email <a href="mailto:hello@threndle.ai">hello@threndle.ai</a>. We confirm the scope on a short call before anything is signed, then connect your tools and deliver the first workflow against real data.
       </p>
+      </div>
     </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
