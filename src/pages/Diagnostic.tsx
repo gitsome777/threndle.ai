@@ -663,9 +663,9 @@ export default function Diagnostic() {
   // public URL, so this is the only thing standing between it and scripted spam.
   const honeypot = useRef<HTMLInputElement>(null);
 
-  // The static index.html shell ships the homepage's title and canonical, so give
-  // /diagnostic its own for crawlers that render JavaScript. Restore on unmount so
-  // client-side navigation back to the landing page doesn't keep them.
+  // Direct loads get the right title and canonical from the static diagnostic.html
+  // shell; this covers client-side navigation from the landing page, where the
+  // homepage's values are still in the document. Restore on unmount.
   useEffect(() => {
     const prevTitle = document.title;
     const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
