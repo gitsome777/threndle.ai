@@ -44,7 +44,7 @@ export default function Landing() {
 
         <section className="w-full bg-stone-raised py-20 px-6 border-y border-rule">
           <div className="max-w-3xl mx-auto">
-            <h1 className="font-serif font-medium text-3xl mb-4 text-center">AI implementation for small businesses in Fraser Valley</h1>
+            <h1 className="font-serif font-medium text-3xl mb-4 text-center">AI automation for small businesses in Fraser Valley</h1>
             <p className="text-ink-soft text-base leading-relaxed mb-8 text-center max-w-2xl mx-auto">
               You do not need to replace your software or hire a technical team. We connect Claude, an AI assistant made by Anthropic, to the tools you already pay for. Then we build small, reliable workflows around the bottlenecks that are actually eating your week.
             </p>
@@ -179,7 +179,7 @@ export default function Landing() {
               <div>
                 <h3 id="what-does-threndle-ai-do" className="font-semibold text-lg mb-2 scroll-mt-24">What does threndle.ai do?</h3>
                 <p className="text-ink-soft text-base leading-relaxed">
-                  threndle.ai is an independent AI implementation consultancy for small businesses. We connect Claude to the tools you already use, including accounting, CRM, payments, email, files, and team ops, and put your biggest operational bottleneck on autopilot.
+                  threndle.ai is an independent AI automation consultancy for small businesses. We connect Claude to the tools you already use, including accounting, CRM, payments, email, files, and team ops, and put your biggest operational bottleneck on autopilot.
                 </p>
               </div>
 
