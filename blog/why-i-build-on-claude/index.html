@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-THNY2V61ET"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-THNY2V61ET');
+    </script>
+
+    <title>Why I build threndle.ai on Claude | threndle.ai blog</title>
+    <meta name="description" content="n8n, OpenClaw, an Amii scholarship, and Hermes: the road to Claude. Founder James Forrester on how threndle.ai landed on Claude Cowork with the Small Business skill set, with updates from July 24 and August 4." />
+    <link rel="canonical" href="https://threndle.ai/blog/why-i-build-on-claude/" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="threndle.ai" />
+    <meta property="og:title" content="Why I build threndle.ai on Claude" />
+    <meta property="og:description" content="n8n, OpenClaw, an Amii scholarship, and Hermes: the road to Claude, and why Claude Cowork with the Small Business skill set became the answer." />
+    <meta property="og:url" content="https://threndle.ai/blog/why-i-build-on-claude/" />
+    <meta property="og:image" content="https://threndle.ai/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="threndle.ai: why I build on Claude" />
+    <meta property="og:locale" content="en_CA" />
+    <meta property="article:published_time" content="2026-07-21" />
+    <meta property="article:modified_time" content="2026-08-04" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Why I build threndle.ai on Claude" />
+    <meta name="twitter:description" content="n8n, OpenClaw, an Amii scholarship, and Hermes: the road to Claude, and why Claude Cowork with the Small Business skill set became the answer." />
+    <meta name="twitter:image" content="https://threndle.ai/assets/og-image.png" />
+    <meta name="twitter:image:alt" content="threndle.ai: why I build on Claude" />
+
+    <link rel="icon" type="image/png" href="/assets/favicon-gnome.png" />
+    <link rel="apple-touch-icon" href="/assets/favicon-gnome.png" />
+    <link rel="stylesheet" href="/src/index.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Why I build threndle.ai on Claude",
+      "description": "n8n, OpenClaw, an Amii scholarship, and Hermes: the road to Claude. Founder James Forrester on how threndle.ai landed on Claude Cowork with the Small Business skill set.",
+      "datePublished": "2026-07-21",
+      "dateModified": "2026-08-04",
+      "author": {
+        "@type": "Person",
+        "name": "James Forrester",
+        "jobTitle": "Founder, AI Implementation Consultant",
+        "sameAs": ["https://www.linkedin.com/in/james-forrester-8478b1369/"]
+      },
+      "publisher": { "@id": "https://threndle.ai/#business" },
+      "mainEntityOfPage": "https://threndle.ai/blog/why-i-build-on-claude/"
+    }
+    </script>
+  </head>
+  <body>
+    <div class="min-h-screen flex flex-col">
+      <nav class="sticky top-0 z-50 flex justify-center py-4 px-6 bg-stone border-b border-rule backdrop-blur-md bg-opacity-90">
+        <a href="/" class="font-bold text-2xl tracking-tight flex items-baseline" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+          <span class="text-[#433A36] -tracking-[0.5px]">threndle</span>
+          <span class="text-[#B8562B] text-xl">.ai</span>
+        </a>
+      </nav>
+
+      <main class="flex-1 flex flex-col items-center">
+        <article class="w-full pt-16 pb-12 px-6 max-w-3xl mx-auto">
+          <p class="font-mono text-xs text-ink-soft tracking-wider mb-4 text-center">
+            <a href="/blog/" class="underline hover:text-teal">Blog</a> · July 21, 2026 · James Forrester
+          </p>
+          <h1 class="font-serif font-medium text-4xl mb-8 text-center">Why I build threndle.ai on Claude</h1>
+
+          <p class="text-lg leading-relaxed text-ink-soft mb-6">
+            Before threndle.ai had a name, it had a decision to make: if I was going to
+            connect an AI to a small business's books, inbox, and CRM, whose platform
+            was I willing to stake someone else's livelihood on?
+          </p>
+
+          <p class="text-ink-soft text-base leading-relaxed mb-6">
+            We didn't land on Claude first try. We'd been messing around with agentic
+            frameworks for a while before that. Started with
+            <a href="https://n8n.io/" target="_blank" rel="noopener noreferrer" class="underline hover:text-teal">n8n</a>,
+            which is great for stringing together simple automations but starts to
+            strain the moment you want something that can actually reason through a
+            task. Next came
+            <a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener noreferrer" class="underline hover:text-teal">OpenClaw</a>.
+            That one lasted a while, until we ran into some security issues we weren't
+            willing to put in front of a client, and not the kind you patch and move
+            past either. It made us rethink the whole stack. Around then I received a
+            scholarship from
+            <a href="https://www.amii.ca/" target="_blank" rel="noopener noreferrer" class="underline hover:text-teal">Amii</a>
+            in Alberta, and that pushed me toward
+            <a href="https://hermes-agent.nousresearch.com/" target="_blank" rel="noopener noreferrer" class="underline hover:text-teal">Hermes</a>.
+            Hermes is genuinely capable, but it's also a lot. It's the kind of setup
+            that assumes you're comfortable configuring an open agent stack from
+            scratch, and most small business owners aren't going to sit down and learn
+            that. Honestly, I didn't want to become the person explaining it to them
+            every time either.
+          </p>
+
+          <p class="text-ink-soft text-base leading-relaxed mb-10">
+            That's the backdrop for why Claude Cowork and the Small Business skill set
+            became the answer. I spent that spring reading security documentation
+            instead of marketing pages. Here's where I landed, and why.
+          </p>
+
+          <div class="flex flex-col gap-8">
+            <div>
+              <h2 id="why-did-you-choose-claude" class="font-serif font-medium text-2xl mb-2 scroll-mt-24">Why did you choose Claude?</h2>
+              <p class="text-ink-soft text-base leading-relaxed">
+                Because the job puts an AI inside a client's real accounting, email, and customer records, and that's not a decision you make off a demo. Not after OpenClaw, anyway. I wasn't going to take anyone's word for it. I wanted a platform with a genuinely serious security posture, from a company whose reputation is staked on doing AI carefully. <span style="color:#d97757; font-weight:600;">Anthropic</span> built its name on safety research. Its business terms don't train models on your data. Claude connects through official APIs, with permissions you approve. No getting under the hood required.
+              </p>
+            </div>
+
+            <div>
+              <h2 id="what-is-claude-cowork" class="font-serif font-medium text-2xl mb-2 scroll-mt-24">What is Claude Cowork?</h2>
+              <p class="text-ink-soft text-base leading-relaxed">
+                Claude Cowork is <span style="color:#d97757; font-weight:600;">Anthropic</span>'s own mode, the one that turns Claude into a coworker connected to the tools you already use, not a chatbot on the side. Of everything I tested, it was the best product to bring to small businesses. threndle.ai is how we set that up inside yours: reconciling transactions, drafting follow-ups, keeping records current, always under your control. The business keeps its software. Claude learns the workflow.
+              </p>
+            </div>
+
+            <div>
+              <h2 id="what-are-small-business-skills" class="font-serif font-medium text-2xl mb-2 scroll-mt-24">What are Small Business skills?</h2>
+              <p class="text-ink-soft text-base leading-relaxed">
+                A skill is one specific job Claude knows how to do in your tools. Reconcile yesterday's Stripe payouts against QuickBooks. Chase invoices overdue past seven days. Draft a follow-up to a lead gone cold. Small Business skills are the starter set, built around the software Fraser Valley businesses already pay for: accounting, payments, CRM, email, files, team ops.
+              </p>
+            </div>
+
+            <div>
+              <h2 id="what-does-that-mean-for-your-data" class="font-serif font-medium text-2xl mb-2 scroll-mt-24">What does that mean for your data?</h2>
+              <p class="text-ink-soft text-base leading-relaxed">
+                It stays yours, in your tools. We don't store your credentials or raw business data on our servers. Claude connects through official APIs and OAuth where available, using read-and-write permissions you approve. Any automation can be paused or revoked at any time, and every integration is reviewed before it goes live.
+              </p>
+            </div>
+
+            <div>
+              <h2 id="would-you-choose-it-again" class="font-serif font-medium text-2xl mb-2 scroll-mt-24">Would you choose it again?</h2>
+              <p class="text-ink-soft text-base leading-relaxed">
+                Yes. Every engagement since has confirmed the same thing: the platform choice matters less for what it can do on a demo and more for what it can be trusted with on a Tuesday morning in someone else's books. Security posture and reputation were the right criteria then, and after n8n, OpenClaw, and Hermes, I'm even more convinced they're the right ones now.
+              </p>
+            </div>
+          </div>
+
+          <h2 class="font-serif font-medium text-2xl mt-12 mb-2">Update, July 24</h2>
+          <p class="text-ink-soft text-base leading-relaxed mb-6">
+            A few days after this went up, I had to pump the brakes for a bit. Turned
+            out threndle.ai didn't actually have any infrastructure for Claude to
+            connect to yet. All the platform research in the world doesn't help if
+            there's nothing on the other end of the wire. So I picked a CRM and an
+            accounting tool to standardize on, and built a custom market research MCP
+            from scratch using MIT licensed repos off GitHub. More on that soon.
+          </p>
+
+          <h2 class="font-serif font-medium text-2xl mb-2">Update, August 4</h2>
+          <p class="text-ink-soft text-base leading-relaxed mb-6">
+            After the long weekend, I got back to work on branding and our website,
+            <a href="https://threndle.ai" class="underline hover:text-teal">threndle.ai</a>.
+            And here we are, after connecting our workflows to our social media
+            channels too.
+          </p>
+
+          <p class="text-ink-soft text-base leading-relaxed mt-10">
+            This is the first entry in the threndle.ai build log. Next: what the first
+            diagnostic actually surfaced. Until then, start with the
+            <a href="/diagnostic" class="underline hover:text-teal">three-minute diagnostic</a>
+            or email us at <a href="mailto:hello@threndle.ai" class="underline hover:text-teal">hello@threndle.ai</a>.
+          </p>
+        </article>
+      </main>
+
+      <footer class="text-center py-12 px-6 font-mono text-xs text-ink-soft tracking-wider">
+        threndle.ai · Fraser Valley, BC · hello@threndle.ai ·
+        <a href="/blog/" class="underline hover:text-teal">Blog</a> ·
+        <a href="https://www.linkedin.com/company/threndle-ai/" target="_blank" rel="noopener noreferrer" class="underline hover:text-teal">LinkedIn</a> ·
+        <a href="https://www.instagram.com/threndle.ai/" target="_blank" rel="noopener noreferrer" class="underline hover:text-teal">Instagram</a> ·
+        <a href="https://www.facebook.com/profile.php?id=61592102436833" target="_blank" rel="noopener noreferrer" class="underline hover:text-teal">Facebook</a> ·
+        <a href="https://www.tiktok.com/@threndle.ai" target="_blank" rel="noopener noreferrer" class="underline hover:text-teal">TikTok</a> ·
+        <a href="https://x.com/threndleai" target="_blank" rel="noopener noreferrer" class="underline hover:text-teal">X</a>
+      </footer>
+    </div>
+  </body>
+</html>

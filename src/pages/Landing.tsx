@@ -240,6 +240,7 @@ export default function Landing() {
           {" · "}Mission · Maple Ridge · Surrey · Agassiz · Hope
         </p>
         threndle.ai · Fraser Valley, BC · hello@threndle.ai ·{" "}
+        <a href="/blog/" className="underline hover:text-teal">Blog</a> ·{" "}
         <a href="https://www.linkedin.com/company/threndle-ai/" target="_blank" rel="noopener noreferrer" className="underline hover:text-teal">LinkedIn</a> ·{" "}
         <a href="https://www.instagram.com/threndle.ai/" target="_blank" rel="noopener noreferrer" className="underline hover:text-teal">Instagram</a> ·{" "}
         <a href="https://www.facebook.com/profile.php?id=61592102436833" target="_blank" rel="noopener noreferrer" className="underline hover:text-teal">Facebook</a> ·{" "}

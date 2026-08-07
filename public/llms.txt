@@ -40,6 +40,12 @@ Final pricing is set after the diagnostic and a scoping call. Figures above are 
 - [Diagnostic](https://threndle.ai/diagnostic): a short questionnaire that returns a recommendation
   on which bottleneck to fix first. Interactive form, not reference content.
 
+## Blog
+
+- [Why I build threndle.ai on Claude](https://threndle.ai/blog/why-i-build-on-claude/) (July 21, 2026):
+  founder James Forrester on choosing Claude for its security posture and reputation, and how that
+  became Claude Cowork with Small Business skills.
+
 ## City pages
 
 - [AI implementation in Abbotsford, BC](https://threndle.ai/locations/abbotsford/): services,

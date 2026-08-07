@@ -23,6 +23,13 @@ export default defineConfig(() => {
           'locations/abbotsford': path.resolve(__dirname, 'locations/abbotsford/index.html'),
           'locations/chilliwack': path.resolve(__dirname, 'locations/chilliwack/index.html'),
           'locations/langley': path.resolve(__dirname, 'locations/langley/index.html'),
+          // Static shell for /diagnostic so non-JS crawlers get the questionnaire's
+          // substance, not the homepage fallback. React mounts over it, same as index.
+          diagnostic: path.resolve(__dirname, 'diagnostic.html'),
+          // Blog: standalone static HTML (no React) so crawlers and AI answer engines
+          // get the full content, same reasoning as the city pages.
+          blog: path.resolve(__dirname, 'blog/index.html'),
+          'blog/why-i-build-on-claude': path.resolve(__dirname, 'blog/why-i-build-on-claude/index.html'),
         },
       },
     },
